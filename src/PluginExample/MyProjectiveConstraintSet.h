@@ -49,12 +49,13 @@ protected:
     MyProjectiveConstraintSet();
     virtual ~MyProjectiveConstraintSet();
 
+    void doProjectResponse(const core::MechanicalParams* /* mparams */, DataVecDeriv& /* dx */) override {}
+
 public:
     void init() override;
 
     void reinit() override;
 
-    void projectResponse(const core::MechanicalParams* /* mparams */, DataVecDeriv& /* dx */) override {}
     void projectVelocity(const core::MechanicalParams* /* mparams */, DataVecDeriv& /* v */) override {}
     void projectPosition(const core::MechanicalParams* /* mparams */, DataVecCoord& /* x */) override {}
     void projectJacobianMatrix(const core::MechanicalParams* /* mparams */, DataMatrixDeriv& /* cData */) override {}
